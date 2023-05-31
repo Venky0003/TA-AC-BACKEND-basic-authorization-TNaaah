@@ -1,0 +1,70 @@
+<%- include ('partials/header') %>
+<section class="container">
+  <% if(locals.error) { %>
+    <p><%= locals.error %></p>
+  <% } %>
+  <div>
+    <h2 class="title"><%= article.title %></h2>
+    <p class="text"><%= article.author.getFullName() %></p>
+    <p class="text"><%= article.description %></p>
+    <p class="text"><%= article.likes %></p>
+    <a href="/articles/<%= article.id %>/likes">
+      <button class="btn">likes</button>
+    </a>
+    <a href="/articles/<%= article.id %>/edit">
+      <button class="btn btn-edit">Edit</button>
+    </a>
+    <a href="/articles/<%= article.id %>/delete">
+      <button class="btn btn-edit btn-delete">Delete</button>
+    </a>
+  </div>
+
+  <div>
+    <form action="/articles/<%= article.id %>/comments" method="POST">
+      <textarea
+        class="comments"
+        name="content"
+        id=""
+        cols="40"
+        rows="4"
+        placeholder="Add comment..."
+      ></textarea>
+      <input class="btn btn-comment" type="submit" value="Add Comment" />
+    </form>
+  </div>
+
+  <div>
+    <h2 class="comment-header">Comments</h2>
+    <hr />
+    <% article.comments.forEach((comment)=> { %>
+    <div>
+      <p class="content"><%= comment.content %></p>
+      <div class="flex">
+        <div class="flex like-box">
+          <p class="likes"><%= comment.likes %></p>
+          <a class="likes" href="/comments/<%= comment.id %>/likes">
+            <!-- <button class="btn"></button> -->
+            <i class="fa-solid fa-thumbs-up"></i>
+          </a>
+          <span class="hover-text">I like this</span>
+        </div>
+        <div class="flex like-box">
+          <p class="likes"><%= comment.dislikes %></p>
+          <a class="likes" href="/comments/<%= comment.id %>/dislikes">
+            <!-- <button class="btn btn-edit"></button> -->
+            <i class="fa-solid fa-thumbs-down"></i>
+          </a>
+          <span class="hover-text">I Dislike this</span>
+        </div>
+      </div>
+    </div>
+    <a href="/comments/<%= comment.id %>/edit">
+      <button class="btn btn-edit">Edit</button>
+    </a>
+    <a href="/comments/<%= comment.id %>/delete">
+      <button class="btn btn-edit btn-delete">Delete</button>
+    </a>
+    <% }) %>
+  </div>
+</section>
+<%- include ('partials/footer') %>

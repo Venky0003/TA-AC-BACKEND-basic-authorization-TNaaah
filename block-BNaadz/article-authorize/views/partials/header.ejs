@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/51a7cc97b5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <h1>Articles</h1>
+        <% if(user){ %>
+        <nav>
+          <a class="links" href="/articles">View Articles</a>
+          <a class="links" href="/articles/new">Add Article</a>
+          <a class="links"> <%= user.getFullName() %></a>
+          <a class="links" href="/users/logout">Logout</a>
+        </nav>
+        <% } else{ %>
+        <nav>
+          <a class="links" href="/articles">View Articles</a>
+          <a class="links" href="/articles/new">Add Article</a>
+          <a class="links" href="/users/logout">Logout</a>
+          <a class="links" href="/users/login">Login</a>
+          <a class="links" href="/users/register">Register</a>
+        </nav>
+        <% } %>
+      </div>
+    </header>
+
