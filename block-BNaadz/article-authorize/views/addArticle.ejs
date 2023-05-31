@@ -1,0 +1,31 @@
+<%- include ('partials/header') %>
+    <section class="container flex">
+      <div class="flex-box">
+        <form action="/articles" method="POST">
+          <h2 class="form-header">Article Details</h2>
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="Enter Title"
+          />
+          <textarea
+            name="description"
+            id=""
+            cols="88"
+            rows="15"
+            placeholder="Add Description"
+          ></textarea>
+    
+          <input
+            type="number"
+            name="likes"
+            class="form-control"
+            placeholder="likes"
+          />
+      
+          <input type="submit" class="btn btn-add-update" value="Add Article" />
+        </form>
+      </div>
+    </section>
+    <%- include ('partials/footer') %>

@@ -1,0 +1,34 @@
+<%- include ('partials/header') %>
+    <section class="container">
+      <div class="text-center">
+        <form class="box" action="/comments/<%= comment.id %>" method="POST">
+          <h2 class="form-header">Update Comment</h2>
+          <textarea
+            class="comments"
+            name="content"
+            id=""
+            cols="65"
+            rows="10"
+            placeholder="Add comment..."
+          >
+           <%= comment.content %></textarea
+          >
+          <input
+            class="form-control-comments"
+            type="text"
+            name="likes"
+            placeholder="Add likes"
+            value="<%= comment.likes %>"
+          />
+          <input
+            class="form-control-comments"
+            type="text"
+            name="dislikes"
+            placeholder="Add dislikes"
+            value="<%= comment.dislikes %>"
+          />
+          <input class="btn btn-comment" type="submit" value="Update Comment" />
+        </form>
+      </div>
+    </section>
+    <%- include ('partials/footer') %>
