@@ -1,0 +1,50 @@
+
+<%- include('partials/header') %>
+<section class="container text-center">
+  <h2 class="head-section">Add New Products</h2>
+  <form
+    class="form-login text-center"
+    action="/products"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <input
+      class="form-control"
+      type="text"
+      name="productName"
+      placeholder="Product-Name"
+    />
+    <input
+      class="form-control"
+      type="Number"
+      name="quantity"
+      placeholder="Quantity"
+    />
+    <input
+      class="form-control"
+      type="Number"
+      name="price"
+      placeholder="Price"
+    />
+    <input
+      class="form-control"
+      type="Number"
+      name="likes"
+      placeholder="Likes"
+    />
+    <input
+      class="form-control"
+      type="file"
+      name="image"
+      placeholder="Add Iamges"
+    />
+    <select class="form-control" name="categories" id="">
+      <option value="">Select the Category type</option>
+      <% categories.forEach((category)=>{ %>
+      <option value="<%= category._id %>"><%= category.category_type %></option>
+      <%}) %>
+    </select>
+    <input class="submit-btn" type="submit" value="Submit" />
+  </form>
+</section>
+<%- include('partials/footer')%>

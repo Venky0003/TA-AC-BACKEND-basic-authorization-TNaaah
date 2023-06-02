@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <h2><a href="/">Home</a></h2>
+        <nav>
+          <a class="links" href="login">Login</a>
+        </nav>
+      </div>
+    </header>
+    <section class="container text-center">
+      <form class="form-login" action="/users/register" method="POST">
+        <h3 class="form-header">New User Registration</h3>
+        <input
+          class="form-control"
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          placeholder="Eamil"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="password"
+          placeholder="Password"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="city"
+          placeholder="city"
+        />
+        <input class="submit-btn" type="Submit" value="Create Account" />
+      </form>
+    </section>
+  </body>
+</html>

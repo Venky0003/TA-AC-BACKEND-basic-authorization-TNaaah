@@ -1,0 +1,15 @@
+<%- include('partials/header')%>
+<section class="container text-center">
+  <h2 class="head-section">Your Cart Items</h2>
+  <ul>
+    <% cartItems.forEach((item) =>{ %>
+    <li>
+      <%= item.productName %>
+      <form action="/users/cart/remove/<%= item._id %>" method="GET">
+        <button type="submit">Remove</button>
+      </form>
+    </li>
+    <% }); %>
+  </ul>
+</section>
+<%- include('partials/footer')%>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script
+      src="https://kit.fontawesome.com/51a7cc97b5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="flex justify-between container align-center">
+        <!-- <h2><a href="/">Home</a></h2> -->
+        <% if (user) { %>
+        <h2><a href="/">Home</a></h2>
+        <nav>
+          <a class="links" href="/products">Products</a>
+          <a class="links"><%= user.getFullName() %></a>
+          <a class="links" href="/users/logout">Logout</a>
+        </nav>
+        <% } else if (admin) { %>
+        <h2><a href="/admins/dashboard">Home</a></h2>
+        <nav>
+          <a class="links" href="/categories/new">Add Categories</a>
+          <a class="links"> <%= admin.name %></a>
+          <a class="links" href="admin/logout">Logout</a>
+        </nav>
+        <%} else {%>
+        <h2><a href="/">Home</a></h2>
+        <nav>
+          <a class="links" href="/users/login">Login</a>
+          <a class="links" href="/users/register">Create Account</a>
+        </nav>
+        <% } %>
+      </div>
+    </header>

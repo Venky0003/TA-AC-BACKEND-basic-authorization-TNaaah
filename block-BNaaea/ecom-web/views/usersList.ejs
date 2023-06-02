@@ -1,0 +1,24 @@
+<%- include('partials/headerAdmin')%>
+<section class="container text-center box">
+  <% if (users.length > 0) { %>
+  <ul>
+    <% users.forEach((user) => { %>
+    <li>
+      <%= user.getFullName() %> 
+      <% if (user.blocked) { %>
+      <form action="/admins/users/<%= user._id %>/block" method="POST">
+        <button type="submit">Unblock</button>
+      </form>
+      <% } else { %>
+      <form action="/admins/users/<%= user._id %>/block" method="POST">
+        <button type="submit">Block</button>
+      </form>
+      <% } %>
+    </li>
+    <% }) %>
+  </ul>
+  <% } else { %>
+  <p>No users found.</p>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

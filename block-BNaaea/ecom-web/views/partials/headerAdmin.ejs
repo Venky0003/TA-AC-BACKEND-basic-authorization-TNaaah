@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <% if (admin) { %>
+            <a href="/admins/dashboard"><h2>Admin-Dashboard</h2></a>
+        <nav>
+          <a class="links" href="/products">View Products</a>
+          <a class="links" href="/categories/new">Add Categories</a>
+          <a class="links" href="/categories/new">View Categories</a>
+          <a class="links"> <%= admin.name %></a>
+          <a class="links" href="/admins/adminlogout">Logout</a>
+          <a class="links" href="/admins/users">View Users</a>
+        </nav>
+        <%} else {%>
+            <a href="/admins/dashboard"><h2>Admin-Dashboard</h2></a>
+        <nav>
+          <a class="links" href="/">User-DashBoard</a>
+          <a class="links" href="/admins/adminregister">Register</a>
+          <a class="links" href="/admins/adminlogin">Login</a>
+          <% } %>
+        </nav>
+      </div>
+    </header>
