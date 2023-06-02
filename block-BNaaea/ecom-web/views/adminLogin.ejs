@@ -1,0 +1,25 @@
+<%- include('partials/headerAdmin')%>
+<section class="container text-center box">
+  <form class="form-login" action="/admins/adminlogin" method="POST">
+    <h3 class="form-header">Admin Login</h3>
+    <% if(error) { %>
+    <p><%= error %></p>
+    <% } %>
+    <input
+      class="form-control"
+      type="text"
+      name="email"
+      id=""
+      placeholder="Eamil"
+    />
+    <input
+      class="form-control"
+      type="text"
+      name="password"
+      id=""
+      placeholder="password"
+    />
+    <input class="submit-btn" type="submit" value="Admin-login" />
+  </form>
+</section>
+<%- include('partials/footer')%>

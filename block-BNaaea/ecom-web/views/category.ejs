@@ -1,0 +1,14 @@
+<%- include('partials/header2')%>
+<section class="container box">
+  <h2 class="form-header text-center">Categories</h2>
+  <ul>
+    <% categories.forEach((category) => { %>
+    <li class="list-cats text-center">
+      <a href="/products/category/<%= category._id %>"
+        ><%= category.category_type %></a
+      >
+    </li>
+    <% }) %>
+  </ul>
+</section>
+<%- include('partials/footer') %>

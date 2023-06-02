@@ -1,0 +1,16 @@
+<%- include('partials/header')%>
+<section class="container box">
+  <div class="container grid">
+    <% products.forEach(product => { %>
+    <a class="grid-item" href="/products/<%= product.id %>">
+      <img
+        class="product-img"
+        src="/uploads/<%= product.image %>"
+        alt="Product image"
+      />
+      <h2 class="name"><%= product. productName %></h2>
+    </a>
+    <% }) %>
+  </div>
+</section>
+<%- include('partials/footer')%>

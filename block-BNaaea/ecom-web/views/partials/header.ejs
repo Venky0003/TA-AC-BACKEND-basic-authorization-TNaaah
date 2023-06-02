@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <%if(user){%>
+        <a href="/">
+          <h2>Home</h2>
+        </a>
+        <nav>
+          <a class="links" href="/products">View Products</a>
+          <a class="links"><%= user.getFullName() %></a>
+          <a class="links" href="/users/logout">Logout</a>
+        </nav>
+        <% } else if (admin) { %>
+        <a href="/admins/dashboard">
+          <h2>Home</h2>
+        </a>
+        <nav>
+          <a class="links" href="/products">View Products</a>
+          <a class="links" href="/products/new">Add New Products</a>
+          <a class="links"><%= admin.name %></a>
+          <a class="links" href="/admins/adminlogout">Logout</a>
+        </nav>
+        <%} else {%>
+        <a href="/">
+          <h2>Home</h2>
+        </a>
+        <nav>
+          <a class="links" href="/products">View Products</a>
+          <a class="links" href="/users/login">User-Login</a>
+          <a class="links" href="/users/register">Create Account</a>
+          <a class="links" href="/admins/dashboard">Admin</a>
+        </nav>
+        <% } %>
+      </div>
+    </header>
