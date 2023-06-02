@@ -1,0 +1,29 @@
+<%- include('partials/header2')%>
+<section class="container text-center box">
+  <div class="details">
+    <img src="/uploads/<%= product.image %>" alt="Product image" />
+    <h2>Product: <%= product.productName %></h2>
+    <p>Available Quantity: <%= product.quantity %></p>
+    <p>Rs:<%= product.price %></p>
+    <% if (product.categories && product.categories.length > 0) { %>
+    <p class="text">Category: <%= product.categories[0].category_type %></p>
+    <% } else { %>
+    <p class="text">Category: No category assigned</p>
+    <% } %>
+    <a class="like-btn" href="/products/<%= product.id %>/likes"
+      ><%= product.likes %><i class="fa-solid fa-thumbs-up"></i
+    ></a>
+    <form
+      class="add-cart"
+      action="/users/products/<%= product._id %>/cart"
+      method="GET"
+    >
+      <button type="submit">Add to Cart</button>
+    </form>
+  </div>
+  <a class="edit-btn" href="/products/<%= product.id %>/edit">edit</a>
+  <a class="edit-btn delete-btn" href="/products/<%= product.id %>/delete"
+    >Delete</a
+  >
+</section>
+<%- include('partials/footer')%>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/51a7cc97b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="flex justify-between container align-center">
+        <h2>EventHub</h2>
+        <nav>
+          <a class="links" href="/products/new">Add Products</a>
+          <a class="links" href="/categories">See All Category</a>
+        </nav>
+      </div>
+    </header>
+    <section class="container list text-center">
+      <h1>Products by Category</h1>
+
+      <% if (products.length > 0) { %>
+      <ul>
+        <% products.forEach((product) => { %>
+        <li><%= product.productName %></li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No Products found for this category.</p>
+      <% } %>
+    </section>
+  </body>
+</html>

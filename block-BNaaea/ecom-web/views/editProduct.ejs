@@ -1,0 +1,64 @@
+<%- include('partials/headerAdmin') %>
+<section class="container text-center">
+  <h2 class="head-section">Update The Product Details</h2>
+  <form
+    class="form-edit"
+    action="/products/<%=product.id %>"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <label for="productName">Product Name</label>
+    <input
+      type="text"
+      name="productName"
+      placeholder="Product-Name"
+      value="<%= product.productName %>"
+      class="form-control"
+    />
+    <label for="quantity">Product Quantity</label>
+    <input
+      type="Number"
+      name="quantity"
+      placeholder="Quantity"
+      value="<%= product.quantity %>"
+      class="form-control"
+    />
+    <label for="price">Product Price</label>
+    <input
+      type="Number"
+      name="price"
+      placeholder="Price"
+      value="<%= product.price %>"
+      class="form-control"
+    />
+    <label for="likes">Product likes</label>
+    <input
+      type="Number"
+      name="likes"
+      placeholder="Likes"
+      value="<%= product.likes %>"
+      class="form-control"
+    />
+    <select class="form-control" name="categories">
+      <% categories.forEach((category) => { %>
+        <option value="<%= category._id %>" <% if (product.categories.includes(category._id)) { %>selected<% } %>>
+          <%= category.category_type %>
+        </option>
+      <% }) %>
+    </select>
+    <img
+      class="edit-image"
+      src="/uploads/<%= product.image %>"
+      alt="Current Product Image"
+    />
+    <input
+      class="form-control"
+      type="file"
+      name="image"
+      placeholder="Add Iamges"
+      class="form-control"
+    />
+    <input class="submit-btn update-btn" type="submit" value="Update" />
+  </form>
+</section>
+<%- include('partials/footer')%>

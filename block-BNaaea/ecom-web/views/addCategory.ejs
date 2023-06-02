@@ -1,0 +1,10 @@
+<%- include ('partials/header2') %>
+<section class="container text-center add-cats box">
+  <h2 class="header-add-cat">Add Category</h2>
+  <form action="/categories" method="POST">
+    <label for="name">Please Enter a New Category type :</label>
+    <input type="text" name="category_type" required />
+    <input class="submit-btn-add-cat" type="submit" value="Add Category" />
+  </form>
+</section>
+<%- include ('partials/footer') %>

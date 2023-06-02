@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <h2><a href="/">Home</a></h2>
+        <nav>
+          <a class="links" href="register">Register</a>
+          <a class="links" href="/products">articles</a>
+        </nav>
+      </div>
+    </header>
+    <section class="container text-center">
+      <form class="form-login" action="/users/login" method="POST">
+        <h3 class="form-header">User Login</h3>
+        <% if(error) { %>
+        <p><%= error %></p>
+        <% } %>
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          id=""
+          placeholder="Eamil"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="password"
+          id=""
+          placeholder="password"
+        />
+        <input class="submit-btn" type="submit" value="login" />
+      </form>
+    </section>
+  </body>
+</html>
