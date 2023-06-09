@@ -1,0 +1,339 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1360px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+header {
+  background-color: rgb(7, 122, 7);
+  color: white;
+  padding: 15px 0;
+  margin-bottom: 2rem;
+}
+
+header a {
+  color: white;
+  font-size: 1.1rem;
+  margin-right: 18px;
+}
+
+.index-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.dashboard-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+}
+
+.red {
+  color: red;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-top: 3.5rem;
+}
+
+/* login */
+.form-login {
+  width: 35%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 15px 0;
+}
+
+.form-control {
+  width: 90%;
+  height: 28px;
+  margin-top: 16px;
+}
+.form-control-one {
+  width:45%;
+}
+.form-header {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.submit-btn {
+  margin-top: 28px;
+  width: fit-content;
+  border: none;
+  background-color: rgba(3, 157, 3, 0.8);
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 30px;
+}
+
+.btn {
+  background-color: rgb(18, 78, 199);
+}
+
+.names {
+  text-transform: capitalize;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-gap: 35px;
+  text-align: center;
+}
+
+.grid-items {
+  border: 1px solid rgb(158, 7, 7);
+  height: 320px;
+}
+
+.podcast-img {
+  margin-top: 1rem;
+  width: 250px;
+ 
+}
+
+/* details */
+.title {
+  font-size: 1.4rem;
+}
+
+.description {
+  margin: 20px 0px;
+}
+
+.box {
+  width: 325px;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 12px 0;
+  /* background-color: red; */
+}
+
+/* add page */
+.form-add {
+ width: 840px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.file-label {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  color: #555;
+  transition: border-color 0.3s ease;
+  width: 90%;
+  display: block;
+  margin: 18px 0px;
+  text-align: center;
+}
+
+textarea{
+  margin-top: 18px;
+}
+
+.form-box{
+  border: 1px solid rgb(19, 18, 18);
+  width:90%;
+  margin: 18px auto;
+  padding: 5px 0;
+}
+
+footer{
+  margin-top: 22px;
+  background-color: rgb(7, 122, 7);
+  padding: 15px 0;
+}
+
+.footer-tag{
+  font-size: 1.8rem;
+  color: antiquewhite;
+}
+
+.main-box{
+  height: 540px;
+}
+
+.main-box-1{
+  height: 650px;
+}
+
+.edit{
+  margin-top: 1rem;
+  padding: 15px 30px;
+}
+
+.dlt{
+  background-color: red;
+}
