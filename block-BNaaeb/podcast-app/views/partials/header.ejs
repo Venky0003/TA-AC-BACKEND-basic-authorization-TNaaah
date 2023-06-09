@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between align-center">
+        <% if (user) { %>
+        <h2><a class="index-title" href="/">Wisdom</a></h2>
+        <nav>
+          <a href="/podcasts">View Podcasts</a>
+          <a href="podcasts/new">Add-New-Podcasts</a>
+          <a class="names" href=""><%= user.username %></a>
+          <a href="/users/logout">Logout</a>
+        </nav>
+        <% } else if (admin) {%>
+        <a class="index-title" href="/admins/dashboard">
+          <h2>Wisdom</h2>
+        </a>
+        <nav>
+          <a href="/podcasts">View Podcasts</a>
+          <a href="/podcasts/new">Add New Podcasts</a>
+          <a class="names"><%= admin.username %></a>
+          <a href="/admins/adminlogout">Logout</a>
+        </nav>
+        <% } else { %>
+        <a  class="index-title" href="/">
+          <h2>Wisdom</h2>
+        </a>
+        <nav>
+          <a href="/podcasts">View Podcasts</a>
+          <a href="/users/login">User-Login</a>
+          <a href="/users/register">Create Account</a>
+          <a href="/admins/dashboard">Admin</a>
+        </nav>
+        <% } %>
+      </div>
+    </header>

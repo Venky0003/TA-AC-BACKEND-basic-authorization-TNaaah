@@ -1,0 +1,69 @@
+<%- include('partials/headerAdmin') %>
+<section class="container text-center main-box-1">
+  <form
+    class="form-add"
+    action="/podcasts/<%= podcast.id %>"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <h2 class="form-header text-center">Update Podcasts</h2>
+    <input
+      class="form-control"
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Add Title"
+      value="<%= podcast.title %>"
+      required
+    />
+    <textarea
+      cols="100"
+      rows="5"
+      id="description"
+      name="description"
+      placeholder="Add description"
+      required
+    >
+<%= podcast.description %></textarea
+    >
+    <div class="form-box">
+        <input
+      type="file"
+      id="audio"
+      name="audio"
+      accept="audio/*"
+      class="hidden"
+      required
+    />
+    <label for="audio"class="form-control form-control-one"
+      >Add Audio File:<%= podcast.audio%></label
+    >
+    </div>
+    <img
+      class="podcast-img"
+      src="/uploads/<%= podcast.image %>"
+      alt="Current Image"
+    />
+    <div class="form-box">
+        <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+      />
+      <label for="image"class="form-control form-control-one"
+        >Add Image File:<%= podcast.image%></label
+      >
+    </div>
+   
+    <select class="form-control" name="userRole" id="userRole">
+        <option>Select Podcasts Category</option>
+        <option value="Free" <% if (podcast.userRole === 'Free') { %>selected<% } %>>Free</option>
+        <option value="VIP" <% if (podcast.userRole === 'VIP') { %>selected<% } %>>VIP</option>
+        <option value="Premium" <% if (podcast.userRole === 'Premium') { %>selected<% } %>>Premium</option>
+      </select>
+    </select>
+    <input class="submit-btn btn" type="submit" value="Update" />
+  </form>
+</section>
+<%- include('partials/footer')%>
