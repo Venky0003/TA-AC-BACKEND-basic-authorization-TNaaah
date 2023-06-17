@@ -1,0 +1,29 @@
+<%- include('partials/headerAdmin')%>
+<section class="container text-center main-box">
+  <form class="form-login" action="/admins/adminregister" method="POST">
+    <h3 class="form-header">New Admin Registration</h3>
+    <input class="form-control" type="text" name="username" placeholder="Name" />
+    <input
+      class="form-control"
+      type="text"
+      name="email"
+      id=""
+      placeholder="Email"
+    />
+    <input
+      class="form-control"
+      type="text"
+      name="password"
+      id=""
+      placeholder="Password"
+    />
+    <input
+      class="form-control"
+      type="text"
+      name="admin_code"
+      placeholder="Authorized Id issued by SwiftShop.com"
+    />
+    <input class="submit-btn" type="Submit" value="Create-Admin-Account" />
+  </form>
+</section>
+<%- include('partials/footer')%>

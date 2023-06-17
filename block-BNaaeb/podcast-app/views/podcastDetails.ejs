@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<section class="container main-box">
+  <div class="text-center box">
+    <h2 class="title"><%= podcast.title %></h2>
+    <img
+        class="podcast-img"
+        src="/uploads/<%= podcast.image %>"
+        alt="Podcast image"
+      />
+      <p class="description"><%= podcast.description %></p>
+    <% if (userRole === podcast.userRole || userRole === 'Premium' || userRole
+    === 'VIP' || podcast.userRole === 'Free') { %>
+    <audio controls>
+      <source src="/uploads/<%= podcast.audio %>" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <% } else if(admin) {%>
+    <audio controls>
+      <source src="/uploads/<%= podcast.audio %>" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> 
+    <% } else { %>
+    <p>Sorry, you do not have access to listen to this podcast.</p>
+    <% } %>
+    <div class="flex justify-between align-center">
+      <div class="edit">
+        <a class="submit-btn btn" href="/podcasts/<%= podcast.id %>/edit">Edit</a>
+      </div>
+      <div class="edit">
+        <a class="submit-btn dlt" href="/podcasts/<%= podcast.id %>/delete">Delete</a>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

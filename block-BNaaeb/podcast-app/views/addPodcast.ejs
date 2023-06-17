@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+<section class="container main-box">
+  
+  <form
+    class="form-add"
+    action="/podcasts"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+  <h2 class="form-header text-center">Uplaod Podcasts</h2>
+    <input
+      class="form-control"
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Add Title"
+      required
+    />
+    <textarea
+      cols="100"
+      rows="5"
+      id="description"
+      name="description"
+      placeholder="Add description"
+      required
+    ></textarea>
+    <input
+      type="file"
+      id="audio"
+      name="audio"
+      accept="audio/*"
+      required
+      class="hidden"
+    />
+    <label  class="file-label" for="audio">Add Audio File of Podcast</label>
+    <input
+      type="file"
+      id="image"
+      name="image"
+      accept="image/*"
+      required
+      class="hidden"
+    />
+    <label  class="file-label" for="image">Add Image for Podcast</label>
+    <select class="form-control" name="userRole" id="userRole">
+      <option>Select Podcasts Category</option>
+      <option value="Free">Free</option>
+      <option value="VIP">VIP</option>
+      <option value="Premium">Premium</option>
+    </select>
+    <div class="text-center">
+      <button class="submit-btn btn" type="submit">Upload</button>
+    </div>
+  </form>
+</section>
+<%- include('partials/footer') %>

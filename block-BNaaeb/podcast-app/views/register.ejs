@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+    <section class="container text-center main-box">
+      <form class="form-login" action="/users/register" method="POST">
+        <h3 class="form-header">New User Registration</h3>
+        <input
+          class="form-control"
+          type="text"
+          name="username"
+          placeholder="User-Name"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          placeholder="Email"
+        />
+        <input
+          class="form-control"
+          type="text"
+          name="password"
+          placeholder="Password"
+        />
+        <select class="form-control" id="role" name="role">
+          <option value="">Select Plan's From Below</option>
+          <option value="Free">Free</option>
+          <option value="VIP">VIP</option>
+          <option value="Premium">Premium</option>
+        </select>
+        <input class="submit-btn btn" type="Submit" value="Create Account" />
+      </form>
+    </section>
+<%- include('partials/footer')%>

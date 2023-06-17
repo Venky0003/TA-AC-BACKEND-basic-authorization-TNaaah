@@ -1,0 +1,18 @@
+<%-include('partials/header') %>
+<section class="container main-box">
+  <div>
+    <div class="grid-container">
+      <% podcasts.forEach((podcast) =>{ %>
+        <a class="grid-items" href="/podcasts/<%= podcast._id%>"
+          ><h2><%= podcast.title %></h2>
+          <img
+            class="podcast-img"
+            src="/uploads/<%= podcast.image %>"
+            alt="Podcast image"
+          />
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
